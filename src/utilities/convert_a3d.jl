@@ -4,9 +4,10 @@
 # Would be called if output_format=:dataframe, e.g.:
 
 #   stanmodel = Stanmodel(num_samples=1200, thin=2, name="bernoulli", 
-#   model=bernoullimodel, output_format=:dataframe);
+#   model=bernoullimodel, output_format=:mambachains);
 
-function convert_a3d(sim, cnames, ::Val{:mambachains})
+function convert_a3d(a3d, cnames, ::Val{:mambachains})
   snames = [Symbol(cnames[i]) for i in 1: length(cnames)]
-  #[DataFrame(sim[:,:,i], snames) for i in 1:size(sim, 3)]
+  sr = getindex(a3d, [1:1:size(a3d, 1);], [1:size(a3d, 2);], [1:size(a3d, 3);])
+  Chains(sr, start=1, thin=1, names=cnames, chains=[i for i in 1:size(a3d, 3)])
 end
