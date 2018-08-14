@@ -5,7 +5,7 @@ import CmdStan: convert_a3d
 
 abstract type AbstractChains end
 
-immutable Chains <: AbstractChains
+struct Chains <: AbstractChains
   value::Array{Float64, 3}
   range::Range{Int}
   names::Vector{AbstractString}
@@ -13,7 +13,7 @@ immutable Chains <: AbstractChains
 end
 
 # package code goes here
-using Reexport, Statistics, DataFrames, Documenter
+using Reexport, Statistics, Documenter
 
 @reexport using CmdStan
 
