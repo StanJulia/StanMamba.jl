@@ -33,6 +33,6 @@ cd(ProjDir) do
   rc, sim, cnames = stan(stanmodel, observeddata, ProjDir, diagnostics=false,
     CmdStanDir=CMDSTAN_HOME);
     
-  @test 0.1 <  sim[1, 8,1]  < 0.5
+  @test 0.1 <  sim.value[1, 8, 1]  < 0.8
 
 end # cd
