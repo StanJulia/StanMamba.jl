@@ -9,5 +9,6 @@
 function convert_a3d(a3d, cnames, ::Val{:mambachains})
   snames = [Symbol(cnames[i]) for i in 1: length(cnames)]
   sr = getindex(a3d, [1:1:size(a3d, 1);], [1:size(a3d, 2);], [1:size(a3d, 3);])
-  Chains(sr, start=1, thin=1, names=cnames, chains=[i for i in 1:size(a3d, 3)])
+  #Chains(sr, start=1, thin=1, names=cnames, chains=[i for i in 1:size(a3d, 3)])
+  a3d
 end

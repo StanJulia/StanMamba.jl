@@ -1,6 +1,6 @@
 ######### CmdStan program example  ###########
 
-using StanDataFrames, Test, Statistics
+using StanMamba, Test, Statistics
 
 ProjDir = dirname(@__FILE__)
 cd(ProjDir) do
@@ -33,10 +33,6 @@ cd(ProjDir) do
   rc, sim, cnames = stan(stanmodel, observeddata, ProjDir, diagnostics=false,
     CmdStanDir=CMDSTAN_HOME);
     
-  @test 0.1 <  sim[1][1, :theta]  < 0.5
-
-  if rc == 0
-    display(sim[1][:, [1, 2, 3, 8]])
-  end
+  @test 0.1 <  sim[1, 8,1]  < 0.5
 
 end # cd
