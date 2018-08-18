@@ -1,9 +1,13 @@
 module StanMamba
 
+# package code goes here
+using Statistics, Documenter
+
 import CmdStan: convert_a3d
 using CmdStan: set_cmdstan_home!, CMDSTAN_HOME, Stanmodel,
   stan, Sample, Optimize, Diagnose, Variational
-#import Mamba: Chains
+#import Mamba: AbstractChains, Chains
+
 
 abstract type AbstractChains end
 
@@ -14,8 +18,6 @@ struct Chains <: AbstractChains
   chains::Vector{Int}
 end
 
-# package code goes here
-using Statistics, Documenter
 
 include("utilities/convert_a3d.jl")
 
