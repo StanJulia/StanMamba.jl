@@ -1,6 +1,6 @@
 ######### CmdStan program example  ###########
 
-using StanMamba, Test, Statistics
+using CmdStan, StanMamba, Test, Statistics
 
 ProjDir = dirname(@__FILE__)
 cd(ProjDir) do

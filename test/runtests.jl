@@ -1,5 +1,5 @@
 # Top level test script for Stan.jl
-using StanMamba, Test, Statistics
+using CmdStan, StanMamba, Test, Statistics
 
 println("Running tests for StanMamba-j0.7-v0.0.0:\n")
 
