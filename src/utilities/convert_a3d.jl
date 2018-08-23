@@ -1,7 +1,7 @@
 # Just an example of convert_a3d, never called as the array format is
 # the intermediate format
 
-# Would be called if output_format=:dataframe, e.g.:
+# Would be called if output_format=:mambachains, e.g.:
 
 #   stanmodel = Stanmodel(num_samples=1200, thin=2, name="bernoulli", 
 #   model=bernoullimodel, output_format=:mambachains);
