@@ -4,9 +4,7 @@ module StanMamba
 using Statistics, Documenter
 
 import CmdStan: convert_a3d
-#import Mamba: AbstractChains, Chains
-
-import Mamba: Chains
+import Mamba: AbstractChains, Chains
 
 include("utilities/convert_a3d.jl")
 
