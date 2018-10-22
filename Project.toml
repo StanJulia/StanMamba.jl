@@ -1,7 +1,7 @@
 name = "StanMamba"
 uuid = "1f9da163-5ddd-5895-b7bb-161347ed2303"
 authors = ["StanJulia <goedman@mac.com>"]
-version = "5.0.0"
+version = "4.0.0"
 
 [deps]
 CmdStan = "593b3428-ca2f-500c-ae53-031589ec8ddd"
