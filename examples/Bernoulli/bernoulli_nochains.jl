@@ -33,7 +33,7 @@ cd(ProjDir) do
   rc, sims, cnames = stan(stanmodel, observeddata, ProjDir, diagnostics=false,
     CmdStanDir=CMDSTAN_HOME);
   
-  @test 0.1 <  mean(sim[:, 8, :]) < 0.5
+  @test 0.1 <  mean(sims[:, 8, :]) < 0.5
   
   # Convert  outside of stan()
   
