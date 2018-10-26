@@ -51,3 +51,24 @@ cd(ProjDir) do
 end # cd
 
 ```
+
+It is also possible to do the conversion after the call to stan():
+
+```
+  stanmodel = Stanmodel(num_samples=1200, thin=2, name="bernoulli", 
+    model=bernoullimodel);
+
+  rc, sims, cnames = stan(stanmodel, observeddata, ProjDir, diagnostics=false,
+    CmdStanDir=CMDSTAN_HOME);
+  
+  @test 0.1 <  mean(sims[:, 8, :] ) < 0.6
+  
+  chains = convert_a3d(sims, cnames, Val(:mambachains))
+    
+  @test 0.1 <  mean(chains.value[:, 8, :] ) < 0.6
+```
+
+## Further examples
+
+A separate package, StanMambaExamples.jl, will contain the Mamba based
+examples originally in Stan.jl.
