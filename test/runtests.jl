@@ -1,7 +1,7 @@
 # Top level test script for Stan.jl
 using CmdStan, StanMamba, Test, Statistics
 
-println("Running tests for StanMamba-j1.0-v4.0.1:\n")
+println("Running tests for StanMamba-j1.0-v4.0.2:\n")
 
 
 # Run execution_tests only if cmdstan is installed and CMDSTAN_HOME is set correctly.
