@@ -1,7 +1,7 @@
 module StanMamba
 
 # package code goes here
-using Statistics, Documenter
+using Mamba, Gadfly, Statistics, Documenter
 
 import CmdStan: convert_a3d
 import Mamba: AbstractChains, Chains
