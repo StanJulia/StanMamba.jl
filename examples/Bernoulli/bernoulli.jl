@@ -1,4 +1,4 @@
-######### CmdStan program example  ###########
+######### StanMamba program example  ###########
 
 using CmdStan, StanMamba, Test, Statistics
 

@@ -32,7 +32,11 @@ cd(ProjDir) do
 
   rc, sims, cnames = stan(stanmodel, observeddata, ProjDir, diagnostics=false,
     CmdStanDir=CMDSTAN_HOME);
+  
+  # Convert  outside of stan()
+  
+  chains = convert_a3d(sims, cnames, Val(:mambachains))
     
-  @test 0.1 <  mean(sims[:, 8, :] ) < 0.6
+  @test 0.1 <  mean(chains.value[:, 8, :] ) < 0.6
 
 end # cd
