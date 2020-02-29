@@ -1,7 +1,7 @@
 name = "StanMamba"
 uuid = "1f9da163-5ddd-5895-b7bb-161347ed2303"
 authors = ["StanJulia <goedman@mac.com>"]
-version = "4.1.0"
+version = "5.0.0"
 
 [deps]
 CmdStan = "593b3428-ca2f-500c-ae53-031589ec8ddd"
@@ -11,7 +11,7 @@ StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-CmdStan = "6"
+CmdStan = "6.0"
 Mamba = "0.12"
 StatsBase = "0.32"
 julia = "1"
