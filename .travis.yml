@@ -7,7 +7,7 @@ os:
   - linux
   
 env:
-  - JULIA_CMDSTAN_HOME="$HOME/cmdstan-2.21.0/"
+  - JULIA_CMDSTAN_HOME="$HOME/cmdstan-2.22.1/"
   
 before_install:
   - OLDWD=`pwd`
