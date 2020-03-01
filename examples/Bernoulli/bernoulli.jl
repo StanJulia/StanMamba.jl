@@ -1,6 +1,6 @@
 ######### StanMamba program example  ###########
 
-using CmdStan, StanMamba, Test, Statistics
+using CmdStan, StanMamba, Mamba, Test, Statistics
 
 ProjDir = dirname(@__FILE__)
 cd(ProjDir) do
@@ -32,7 +32,8 @@ cd(ProjDir) do
 
   rc, chains, cnames = stan(stanmodel, observeddata, ProjDir, diagnostics=false,
     CmdStanDir=CMDSTAN_HOME);
-    
+  
+  gelmandiag(chains, mpsrf=true, transform=true) |> Mamba.showall
   @test 0.1 <  mean(chains.value[:, 8, :] ) < 0.6
 
 end # cd
